@@ -10,6 +10,9 @@ import testItems from "./testItems";
 
 export default function testDictionary() {
   // break each part out into its own tests to organize them better
+  console.log();
+  console.log("=== DICTIONARY TESTS ===");
+  console.log();
   testKeys();
   testMembers();
   testAdd();

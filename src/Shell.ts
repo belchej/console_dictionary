@@ -27,7 +27,8 @@ export default class Shell {
     } while (!exit);
   }
 
-  tryExecute(command: string): void {
+  // returns the return of the dictionary command
+  tryExecute(command: string): any {
     if (!command) {
       return;
     }
@@ -38,7 +39,7 @@ export default class Shell {
       const commandName = params[0].toLowerCase();
       params.splice(0, 1);
       try {
-        this.dictionary[commandName](params);
+        return this.dictionary[commandName](params);
       } catch (error) {
         // if it's something the dictionary threw, just log it out
         if (
