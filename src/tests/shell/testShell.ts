@@ -9,6 +9,7 @@ export default function testShell() {
 
   testExecuteValidCalls();
   testTryExecuteInvalidCalls();
+  testTryExecuteValidBadCalls();
 }
 
 const testExecuteValidCalls = () => {
@@ -48,6 +49,24 @@ const testTryExecuteInvalidCalls = () => {
     shell.tryExecute("");
     shell.tryExecute("  test   data");
     shell.tryExecute("add    x     y");
+  } catch {
+    console.error(colors.red("FAIL: exception while executing"));
+    return;
+  }
+  console.log(colors.green("PASSED"));
+};
+
+const testTryExecuteValidBadCalls = () => {
+  console.log("Test: Try Execute Valid Bad Calls");
+
+  const shell = new Shell();
+  try {
+    shell.tryExecute("add foo bar");
+    shell.tryExecute("add foo bar");
+    shell.tryExecute("remove bar");
+    shell.tryExecute("removeall ice");
+    shell.tryExecute("add xyz");
+    shell.tryExecute("members xyz");
   } catch {
     console.error(colors.red("FAIL: exception while executing"));
     return;
