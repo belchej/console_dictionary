@@ -14,7 +14,7 @@ export default class Shell {
     this.dictionary = new Dictionary();
   }
 
-  run() {
+  run(): void {
     let input = "";
     let exit = false;
     do {
@@ -27,7 +27,7 @@ export default class Shell {
     } while (!exit);
   }
 
-  tryExecute(command: string) {
+  tryExecute(command: string): void {
     if (!command) {
       return;
     }

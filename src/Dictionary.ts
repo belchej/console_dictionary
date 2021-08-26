@@ -49,7 +49,7 @@ export default class Dictionary {
     }
   }
 
-  add(keyValuePair: string[]) {
+  add(keyValuePair: string[]): void {
     // extract the key and value
     const { key, value } = validateKeyValuePair(keyValuePair);
 
@@ -67,7 +67,7 @@ export default class Dictionary {
     }
   }
 
-  remove(keyValuePair: string[]) {
+  remove(keyValuePair: string[]): void {
     // extract the key and value
     const { key, value } = validateKeyValuePair(keyValuePair);
 
@@ -93,7 +93,7 @@ export default class Dictionary {
     }
   }
 
-  removeall(keyParam: string[]) {
+  removeall(keyParam: string[]): void {
     const key = validateKey(keyParam);
 
     if (this.dictionary[key]) {
@@ -104,7 +104,7 @@ export default class Dictionary {
     }
   }
 
-  clear() {
+  clear(): void {
     this.dictionary = {};
     console.log("Cleared");
   }
