@@ -127,6 +127,13 @@ export default class Dictionary {
 
   allmembers(): string[] {
     const keys = Object.keys(this.dictionary);
+
+    // if there are no keys, then there are no members
+    if (keys.length === 0) {
+      console.log("empty");
+      return [];
+    }
+
     const allMembers: string[] = [];
     let counter = 1;
 
@@ -137,17 +144,13 @@ export default class Dictionary {
       }
     }
 
-    if (allMembers.length === 0) {
-      console.log("empty");
-    }
-
     return allMembers;
   }
 
   items(): string[] {
     const keys = Object.keys(this.dictionary);
 
-    // if there are no keys, then there are no members
+    // if there are no keys, then there are no items
     if (keys.length === 0) {
       console.log("empty");
       return [];
