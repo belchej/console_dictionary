@@ -1,4 +1,4 @@
-import { validateKeyValuePair, validateKey } from "./utils/dictionary-utils";
+import { validateKeyValuePair, validateKey } from "./utils/dictionaryUtils";
 import DoesNotExistError from "./errors/DoesNotExistError";
 import AlreadyExistsError from "./errors/AlreadyExistsError";
 

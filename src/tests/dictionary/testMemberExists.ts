@@ -1,5 +1,5 @@
 import Dictionary from "../../Dictionary";
-import { tryExpectError } from "../utils/test-utils";
+import { tryExpectError } from "../utils/testUtils";
 import InvalidParameters from "../../errors/InvalidParameters";
 import clonedeep from "lodash.clonedeep";
 import colors from "colors";

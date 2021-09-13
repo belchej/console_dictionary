@@ -1,7 +1,7 @@
 import Dictionary from "../../Dictionary";
 import AlreadyExistsError from "../../errors/AlreadyExistsError";
 import InvalidParameters from "../../errors/InvalidParameters";
-import { tryExpectError } from "../utils/test-utils";
+import { tryExpectError } from "../utils/testUtils";
 import colors from "colors";
 
 export default function testAdd() {
