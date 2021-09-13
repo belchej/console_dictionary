@@ -19,7 +19,9 @@ export default class Shell {
     let exit = false;
     do {
       input = prompt(">");
-      exit = !input || this.EXIT_PROMPTS.includes(input.toLowerCase());
+
+      // killing the script in the console results in a null input, check for that to exit gracefully
+      exit = input === null || this.EXIT_PROMPTS.includes(input.toLowerCase());
 
       if (!exit) {
         this.tryExecute(input);
@@ -27,7 +29,7 @@ export default class Shell {
     } while (!exit);
   }
 
-  // returns the return of the dictionary command
+  // returns the return value of the dictionary command
   tryExecute(command: string): any {
     if (!command) {
       return;
