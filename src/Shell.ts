@@ -45,9 +45,9 @@ export default class Shell {
       } catch (error) {
         // if it's something the dictionary threw, just log it out
         if (
-          error.type === typeof DoesNotExistError ||
-          error.type === typeof InvalidParameters ||
-          error.type === typeof AlreadyExistsError
+          error instanceof DoesNotExistError ||
+          error instanceof InvalidParameters ||
+          error instanceof AlreadyExistsError
         ) {
           console.error(`ERROR: ${error.message}`);
         }
