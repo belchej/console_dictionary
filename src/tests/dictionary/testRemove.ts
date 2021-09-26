@@ -53,7 +53,7 @@ const testRemoveLastMember = () => {
 
 const testMemberNotFound = () => {
   console.log("Test: Member Not Found");
-  const doesNotExistType = typeof DoesNotExistError;
+  const doesNotExistType = "DoesNotExistError";
   const dictionary = new Dictionary(clonedeep(defaultDict));
 
   tryExpectError(
@@ -67,7 +67,7 @@ const testMemberNotFound = () => {
 
 const testInvalidKeyValue = () => {
   console.log("Test: Invalid Key Value");
-  const invalidParametersType = typeof InvalidParameters;
+  const invalidParametersType = "InvalidParameters";
   const dictionary = new Dictionary(clonedeep(defaultDict));
 
   tryExpectError(
@@ -109,7 +109,7 @@ const testInvalidKeyValue = () => {
 
 const testKeyNotFound = () => {
   console.log("Test: Key Not Found");
-  const doesNotExistType = typeof DoesNotExistError;
+  const doesNotExistType = "DoesNotExistError";
   const dictionary = new Dictionary();
 
   tryExpectError(

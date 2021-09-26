@@ -1,5 +1,7 @@
-export default class InvalidParameters extends Error {
+import CustomError from "./CustomError";
+
+export default class InvalidParameters extends CustomError {
   constructor(message: string) {
-    super(`InvalidParameters: ${message}`);
+    super(`InvalidParameters: ${message}`, "InvalidParameters");
   }
 }

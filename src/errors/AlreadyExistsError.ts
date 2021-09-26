@@ -1,5 +1,7 @@
-export default class AlreadyExistsError extends Error {
+import CustomError from "./CustomError";
+
+export default class AlreadyExistsError extends CustomError {
   constructor(message: string) {
-    super(`AlreadyExists: ${message}`);
+    super(`AlreadyExists: ${message}`, "AlreadyExistsError");
   }
 }

@@ -48,7 +48,7 @@ const testGetMembers = () => {
 
 const testInvalidKeys = () => {
   console.log("Test: Invalid Keys");
-  const invalidParametersType = typeof InvalidParameters;
+  const invalidParametersType = "InvalidParameters";
   const dictionary = new Dictionary(clonedeep(defaultDict));
 
   tryExpectError(
@@ -70,7 +70,7 @@ const testInvalidKeys = () => {
 
 const testKeyNotFound = () => {
   console.log("Test: Key Not Found");
-  const doesNotExistType = typeof DoesNotExistError;
+  const doesNotExistType = "DoesNotExistError";
   const dictionary = new Dictionary();
 
   tryExpectError(

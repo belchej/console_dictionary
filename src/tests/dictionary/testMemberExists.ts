@@ -75,7 +75,7 @@ const testKeyDoesNotExist = () => {
 
 const testInvalidKeyValue = () => {
   console.log("Test: Invalid Key Value");
-  const invalidParametersType = typeof InvalidParameters;
+  const invalidParametersType = "InvalidParameters";
   const dictionary = new Dictionary(clonedeep(defaultDict));
 
   tryExpectError(

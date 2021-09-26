@@ -41,7 +41,7 @@ const testValidAdd = () => {
 const testDoubleAdd = () => {
   console.log("Test: Double Add");
   const dictionary: Dictionary = new Dictionary();
-  const alreadyExistsType = typeof AlreadyExistsError;
+  const alreadyExistsType = "AlreadyExistsError";
   const key = "foo";
 
   dictionary.add([key, "baz"]);
@@ -66,7 +66,7 @@ const testBadInput = () => {
   console.log("Test: Expect InvalidParameters");
   const dictionary: Dictionary = new Dictionary();
 
-  const invalidParametersType = typeof InvalidParameters;
+  const invalidParametersType = "InvalidParameters";
 
   // test bad input
   tryExpectError(

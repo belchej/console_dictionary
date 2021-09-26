@@ -37,7 +37,7 @@ const testRemoveKey = () => {
 
 const testInvalidKey = () => {
   console.log("Test: Invalid Key");
-  const invalidParametersType = typeof InvalidParameters;
+  const invalidParametersType = "InvalidParameters";
   const dictionary = new Dictionary(clonedeep(defaultDict));
 
   tryExpectError(
@@ -65,7 +65,7 @@ const testInvalidKey = () => {
 
 const testKeyNotFound = () => {
   console.log("Test: Key Not Found");
-  const doesNotExistType = typeof DoesNotExistError;
+  const doesNotExistType = "DoesNotExistError";
   const dictionary = new Dictionary();
 
   tryExpectError(

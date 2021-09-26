@@ -1,4 +1,5 @@
 import colors from "colors";
+import CustomError from "../../errors/CustomError";
 
 // Expect an error and make sure it is the correct type
 export const tryExpectError = (
@@ -9,15 +10,21 @@ export const tryExpectError = (
   try {
     func();
   } catch (error) {
-    // if its the wrong error type, log error
-    if (error.type !== errorType) {
+    if (error instanceof CustomError) {
+      // if its the wrong error type, log error
+      if (error.type !== errorType) {
+        console.error(
+          colors.red(`FAIL: incorrect error thrown from test: ${testName}`)
+        );
+      }
+      // if the error is the correct type, the test passed
+      else {
+        console.log(colors.green("PASSED"));
+      }
+    } else {
       console.error(
-        colors.red(`FAIL: incorrect error thrown from test: ${testName}`)
+        colors.red(`FAIL: non-custom error thrown from test: ${testName}`)
       );
-    }
-    // if the error is the correct type, the test passed
-    else {
-      console.log(colors.green("PASSED"));
     }
     return;
   }
